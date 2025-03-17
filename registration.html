@@ -615,10 +615,8 @@
           </div>
         </fieldset>
         
-        <!-- Workshop Fieldset with Flip Counter -->
         <p id="counterNote" style="font-size: 1rem; color: var(--light); text-align: center; margin-top: 15px;">
-          Registration Fee: Rs. <span id="flipCounter" class="flip-counter">100</span>
-          Payment will be collected at the event venue.
+          Registration Fee: Rs. <span id="flipCounter" class="flip-counter">100</span>. Payment will be collected at the event venue.
         </p>
 
         <button type="submit">Register Now</button>
@@ -665,30 +663,6 @@
       document.getElementById('modal').style.display = 'none';
     }
     
-    // Flip Counter for Workshop Payment Amount
-    document.addEventListener('DOMContentLoaded', function() {
-      const workshopCheckbox = document.getElementById('workshop');
-      const flipCounterElem = document.getElementById('flipCounter');
-      
-      function updateFlipCounter(newAmount) {
-        flipCounterElem.textContent = newAmount;
-        flipCounterElem.classList.add('flip');
-        flipCounterElem.addEventListener('animationend', function() {
-          flipCounterElem.classList.remove('flip');
-        }, { once: true });
-      }
-      
-      function updateCounter() {
-        const amount = workshopCheckbox.checked ? 150 : 100;
-        updateFlipCounter(amount);
-      }
-      
-      if (workshopCheckbox) {
-        workshopCheckbox.addEventListener('change', updateCounter);
-        updateCounter();
-      }
-    });
-    
     // Inline Validation and Google Sheets Integration
     document.addEventListener('DOMContentLoaded', function() {
       const form = document.getElementById('registrationForm');
@@ -734,7 +708,7 @@
               // Remove local saved data on success
               localStorage.removeItem("registrationData");
               // Redirect to success page with amount parameter from the registration page
-              const amount = document.getElementById('workshop').checked ? 150 : 100;
+              const amount = 100;
               window.location.href = "success.html?amount=" + amount;
             })
             .catch(error => {
@@ -802,8 +776,8 @@
             data[key] = value;
           }
         });
-        // Add totalAmount to the data object based on the workshop selection.
-        data.totalAmount = document.getElementById('workshop').checked ? 150 : 100;
+        // Set totalAmount to 100 since the workshop has been removed.
+        data.totalAmount = 100;
         
         // Replace the URL below with your actual deployed Google Apps Script URL
         const fetchPromise = fetch("https://script.google.com/macros/s/AKfycbz73Sw0DcNwX_AkYqkTfNSMrXRwfh8VuUyqiIEUvi3C47TSbaNNy8pilmKWjos6-AOh/exec", {
