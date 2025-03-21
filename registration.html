@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ziggurat'25 Registration</title>
+  <title>Registration Closed - Ziggurat'25</title>
   <style>
     /* Import Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Poppins:wght@300;400;600;700;900&display=swap');
@@ -31,12 +31,12 @@
       box-sizing: border-box;
     }
 
-    /* Ensure no horizontal overflow on mobile */
+    /* Prevent horizontal overflow on mobile */
     html, body {
       overflow-x: hidden;
     }
 
-    /* Body Background & Global Styles */
+    /* Global Styles */
     body {
       font-family: 'Poppins', 'Inter', sans-serif;
       background: radial-gradient(circle at top right, var(--dark-alt), var(--dark));
@@ -102,7 +102,7 @@
       z-index: 0;
     }
 
-    /* Fixed Header with Hamburger Menu (Anchored fully across the top) */
+    /* Fixed Header */
     header.header {
       position: fixed;
       top: 0;
@@ -160,7 +160,6 @@
     nav.nav a:hover::before {
       width: 100%;
     }
-    /* Remove hover effects on devices that don't support hover */
     @media (hover: none) {
       nav.nav a:hover {
         background: none;
@@ -189,277 +188,42 @@
       }
     }
 
-    /* Main Container (Transparent for background visibility) */
+    /* Main Container */
     .container {
       max-width: 100%;
-      margin: 100px auto 20px; /* top margin to offset fixed header */
+      margin: 100px auto 20px; /* offset for fixed header */
       padding: 40px;
       border-radius: 15px;
       position: relative;
       overflow: hidden;
       background: transparent;
       z-index: 2;
-    }
-
-    /* Registration Form Styles */
-    .registration {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 600px;
-      margin: 0 auto 40px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      border: 1px solid var(--gray-100);
-      position: relative;
-      z-index: 3;
-    }
-    .registration h2 {
       text-align: center;
+    }
+    .container h1 {
+      font-size: 3rem;
       margin-bottom: 20px;
-      font-size: 2rem;
-      color: var(--light);
+      color: var(--accent);
     }
-    /* New Informational Message Block with Highlighted Styling */
-    .registration-info {
-      background: rgba(255, 255, 255, 0.2);
-      border: 1px solid var(--accent);
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      color: var(--light);
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-    .registration form {
-      display: grid;
-      gap: 15px;
-    }
-    .registration label {
-      font-size: 1rem;
-      margin-bottom: 5px;
-      color: var(--light);
-      display: block;
-    }
-    .registration input,
-    .registration select,
-    .registration textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid var(--gray-100);
-      font-size: 1rem;
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--light);
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    .registration input:focus,
-    .registration select:focus,
-    .registration textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 5px var(--accent);
-      outline: none;
-    }
-    .custom-select {
-      position: relative;
-      display: flex;
-      align-items: center;
-      width: 100%;
-    }
-    .custom-select select {
-      width: 100%;
-      padding: 12px 40px 12px 12px;
-      border-radius: 5px;
-      border: 1px solid var(--gray-100);
-      font-size: 1rem;
-      background: rgba(255, 255, 255, 0.2);
-      color: var(--light);
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-    }
-    .custom-select::after {
-      content: "▼";
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      pointer-events: none;
-      color: var(--light);
-      font-size: 1rem;
-    }
-    .registration select option {
-      background: var(--dark);
-      color: var(--light);
-    }
-    .registration fieldset {
-      border: 1px solid var(--gray-100);
-      padding: 10px;
-      border-radius: 5px;
-      margin-bottom: 15px;
-    }
-    .registration fieldset legend {
-      padding: 0 5px;
-      font-size: 1rem;
-      color: var(--light);
-    }
-    /* Segmented Events by Slots - Timings Removed */
-    /* Slot 1 */
-    #slot1 { }
-    /* Slot 2 */
-    #slot2 { }
-    /* Slot 3 */
-    #slot3 { }
-    /* Common Event */
-    #commonEvent { }
-    
-    .event-option {
-      display: inline-block;
-      margin-right: 10px;
+    .container p {
+      font-size: 1.2rem;
       margin-bottom: 10px;
     }
-    .event-option input[type="checkbox"] {
-      display: none;
-    }
-    .event-option label {
+    .container a {
       display: inline-block;
-      padding: 10px 15px;
-      padding-right: 30px;
-      border: 1px solid var(--gray-100);
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
-      user-select: none;
-      position: relative;
-      min-width: 180px;
-      text-align: center;
-    }
-    .event-option label::after {
-      content: "";
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .event-option input[type="checkbox"]:checked + label {
-      background: var(--accent);
-      color: var(--dark);
-      transform: translateY(-2px);
-    }
-    .event-option input[type="checkbox"]:checked + label::after {
-      content: "✓";
-      opacity: 1;
-      font-weight: bold;
-    }
-    .registration button {
-      padding: 12px;
-      border: none;
-      border-radius: 30px;
+      margin-top: 20px;
+      padding: 12px 30px;
       background: linear-gradient(135deg, var(--accent), var(--accent-darker));
       color: var(--dark);
       font-size: 1.1rem;
       font-weight: bold;
-      cursor: pointer;
+      text-decoration: none;
+      border-radius: 30px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .registration button:hover {
+    .container a:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(0,245,160,0.3);
-    }
-    .spinner {
-      display: none;
-      border: 4px solid var(--gray-200);
-      border-top: 4px solid var(--accent);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      animation: spin 1s linear infinite;
-      margin: 20px auto;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    .flip-counter {
-      display: inline-block;
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: var(--light);
-      perspective: 1000px;
-      will-change: transform;
-    }
-    .flip-counter.flip {
-      animation: flipAnimation 0.6s;
-    }
-    @keyframes flipAnimation {
-      0% { transform: rotateX(0deg); }
-      50% { transform: rotateX(-90deg); }
-      100% { transform: rotateX(0deg); }
-    }
-    @media (max-width: 768px) {
-      .container {
-        padding: 20px;
-        margin: 100px 10px 10px; /* top margin still to offset fixed header */
-      }
-      nav.nav a {
-        padding: 10px 15px;
-      }
-      .registration {
-        padding: 20px;
-        margin-bottom: 30px;
-      }
-      .event-option label {
-        min-width: 140px;
-      }
-    }
-    
-    /* Modal Popup Styles */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
-      display: none;
-      z-index: 1000;
-    }
-    .modal {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: var(--light);
-      color: var(--dark);
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      display: none;
-      z-index: 1001;
-      max-width: 90%;
-      text-align: center;
-    }
-    .modal h3 {
-      margin-bottom: 10px;
-    }
-    .modal p {
-      margin-bottom: 20px;
-    }
-    .modal button {
-      padding: 8px 16px;
-      border: none;
-      background: var(--accent);
-      color: var(--dark);
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    
-    /* Particle Animation */
-    @keyframes particle-rise {
-      0% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(-100vh); opacity: 0; }
     }
   </style>
 </head>
@@ -471,15 +235,7 @@
   <div class="noise"></div>
   <div class="particles-container"></div>
   
-  <!-- Modal Popup -->
-  <div class="modal-overlay" id="modalOverlay"></div>
-  <div class="modal" id="modal">
-    <h3 id="modalTitle"></h3>
-    <p id="modalMessage"></p>
-    <button onclick="closeModal()">Close</button>
-  </div>
-  
-  <!-- Fixed Header with Hamburger Menu -->
+  <!-- Fixed Header -->
   <header class="header">
     <div class="logo">
       <img src="asset/college.webp" alt="College Logo and Name" />
@@ -490,338 +246,24 @@
       <a href="registration.html">Registration</a>
       <a href="schedule.html">Schedule</a>
       <a href="contact.html">Contact</a>
-	  <a href="asset/FLYER_Z25.webp">Z25 Flyer</a>
-	  <a href="Sponsership.html">Sponsership</a>
+      <a href="asset/FLYER_Z25.webp">Z25 Flyer</a>
+      <a href="Sponsership.html">Sponsership</a>
     </nav>
   </header>
   
   <!-- Main Container -->
   <div class="container">
-    <section class="registration">
-      <h2>Registration</h2>
-      <!-- New Informational Message -->
-      <div class="registration-info">
-        <p>To ensure a smooth and fun experience,We have divided the events into two slots. You can choose two events from each slot to avoid timing conflicts.</p>
-        <p>For a detailed description of each event, including rules and judging criteria, please visit our Instagram page (@ziggurat_25) or check out our official website. Stay tuned for updates and get ready for an exciting day at Ziggurat '25! 🎉😊</p>
-      </div>
-      <form id="registrationForm" novalidate>
-        <div>
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your name" required>
-        </div>
-        <div>
-          <label for="collegeName">College Name</label>
-          <input type="text" id="collegeName" name="collegeName" placeholder="Enter your college name" required>
-        </div>
-        <div>
-          <label for="rollno">Roll No</label>
-          <input type="text" id="rollno" name="rollno" placeholder="Enter your roll number" required>
-        </div>
-        <div>
-          <label for="collegeEmail">College Email ID</label>
-          <input type="email" id="collegeEmail" name="collegeEmail" placeholder="Enter your college email" required>
-        </div>
-        <div>
-          <label for="personalEmail">Personal Email ID</label>
-          <input type="email" id="personalEmail" name="personalEmail" placeholder="Enter your personal email" required>
-        </div>
-        <div>
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-        </div>
-        <div>
-          <label for="department">Department</label>
-          <input type="text" id="department" name="department" placeholder="Enter your department" required>
-        </div>
-        <div class="custom-select">
-          <label for="yearOfStudy">Year of Study</label>
-          <select id="yearOfStudy" name="yearOfStudy" required>
-            <option value="">Select your year</option>
-            <option value="1">1st Year</option>
-            <option value="2">2nd Year</option>
-            <option value="3">3rd Year</option>
-            <option value="4">4th Year</option>
-          </select>
-        </div>
-        
-        <!-- Segmented Events -->
-        <fieldset id="slot1">
-          <legend>Slot</legend>
-          <div class="event-option">
-            <input type="checkbox" id="event1" name="events" value="Paper and Poster Presentation">
-            <label for="event1">1. Paper and Poster Presentation</label>
-          </div>
-          <div class="event-option">
-            <input type="checkbox" id="event2" name="events" value="Master CAD">
-            <label for="event2">2. Master CAD</label>
-          </div>
-          <div class="event-option">
-            <input type="checkbox" id="event3" name="events" value="Reflex and Debate">
-            <label for="event3">3. Reflex and Debate</label>
-          </div>
-          <div class="event-option">
-            <input type="checkbox" id="event4" name="events" value="Link 'N' Build">
-            <label for="event4">4. Link 'N' Build</label>
-          </div>
-          <div class="event-option">
-            <input type="checkbox" id="event5" name="events" value="CiviQuest">
-            <label for="event5">5. CiviQuest</label>
-          </div>
-          <div class="event-option">
-            <input type="checkbox" id="event12" name="events" value="Pillars and Pixel">
-            <label for="event12">6. Pillars and Pixel</label>
-          </div>
-        </fieldset>
-        
-        <fieldset id="slot2">
-          <legend>Slot</legend>
-          <div class="event-option">
-            <input type="checkbox" id="event6" name="events" value="Civilathon">
-            <label for="event6">7. Civilathon</label>
-          </div>
-          <div class="event-option">
-            <input type="checkbox" id="event7" name="events" value="Bridge to Blockbuster">
-            <label for="event7">8. Bridge to Blockbuster</label>
-          </div>
-          <div class="event-option">
-            <input type="checkbox" id="event8" name="events" value="Master Builder">
-            <label for="event8">9. Master Builder</label>
-          </div>
-          <div class="event-option">
-            <input type="checkbox" id="event9" name="events" value="Scan and Plan">
-            <label for="event9">10. Scan and Plan</label>
-          </div>
-          <div class="event-option">
-            <input type="checkbox" id="event10" name="events" value="Code Crack">
-            <label for="event10">11. Code Crack</label>
-          </div>
-
-        </fieldset>
-        
-        <fieldset id="commonEvent">
-          <legend>Common Event</legend>
-          <div class="event-option">
-            <input type="checkbox" id="event11" name="events" value="Concrete Hands">
-            <label for="event11">12. Concrete Hands</label>
-          </div>
-
-          <div class="event-option">
-            <input type="checkbox" id="event13" name="events" value="Cube Clash">
-            <label for="event13">13. Cube Clash</label>
-          </div>
-          <div class="event-option">
-            <input type="checkbox" id="event14" name="events" value="Load and Locate">
-            <label for="event14">14. Load and Locate</label>
-          </div>
-        </fieldset>
-        
-        <p id="counterNote" style="font-size: 1rem; color: var(--light); text-align: center; margin-top: 15px;">
-          Registration Fee: Rs. <span id="flipCounter" class="flip-counter">100</span>. Payment will be collected at the event venue.
-        </p>
-
-        <button type="submit">Register Now</button>
-      </form>
-    </section>
+    <h1>Registration Closed</h1>
+    <p>We are no longer accepting online registrations for Ziggurat'25.</p>
+    <p>Offline registrations will be available at the event site on the event day.</p>
+    <a href="index.html">Back to Home</a>
   </div>
   
+  <!-- Mobile Menu Toggle Script -->
   <script>
-    // Particle Generation: Create 30 particles for a lightweight animated effect
-    document.addEventListener('DOMContentLoaded', function() {
-      const particlesContainer = document.querySelector('.particles-container');
-      if (particlesContainer) {
-        for (let i = 0; i < 30; i++) {
-          const particle = document.createElement('div');
-          particle.style.position = 'absolute';
-          particle.style.borderRadius = '50%';
-          particle.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--accent');
-          particle.style.width = '2px';
-          particle.style.height = '2px';
-          particle.style.opacity = 0.6;
-          particle.style.animation = 'particle-rise 15s infinite linear';
-          const randomLeft = Math.random() * 100;
-          particle.style.left = `${randomLeft}%`;
-          particle.style.animationDelay = `${Math.random() * 15}s`;
-          particlesContainer.appendChild(particle);
-        }
-      }
-    });
-    
-    // Mobile Hamburger Menu Toggle
     function toggleMenu() {
       document.getElementById('navMenu').classList.toggle('active');
     }
-    
-    // Modal Popup Functions
-    function openModal(title, message) {
-      document.getElementById('modalTitle').textContent = title;
-      document.getElementById('modalMessage').textContent = message;
-      document.getElementById('modalOverlay').style.display = 'block';
-      document.getElementById('modal').style.display = 'block';
-    }
-    function closeModal() {
-      document.getElementById('modalOverlay').style.display = 'none';
-      document.getElementById('modal').style.display = 'none';
-    }
-    
-    // Inline Validation and Google Sheets Integration
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('registrationForm');
-      
-      form.addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent default submission
-        let valid = true;
-        const inputs = form.querySelectorAll('input[required], select[required]');
-        inputs.forEach(input => {
-          if (!input.value.trim()) {
-            valid = false;
-            showError(input, 'This field is required');
-          } else if (input.type === 'email' && !validateEmail(input.value)) {
-            valid = false;
-            showError(input, 'Please enter a valid email address');
-          } else if (input.type === 'tel' && !validatePhone(input.value)) {
-            valid = false;
-            showError(input, 'Please enter a valid phone number');
-          } else {
-            clearError(input);
-          }
-        });
-        if (valid) {
-          // Local save: Save form data to localStorage before sending
-          const formDataObj = {};
-          new FormData(form).forEach((value, key) => {
-            if (formDataObj[key]) {
-              if (!Array.isArray(formDataObj[key])) {
-                formDataObj[key] = [formDataObj[key]];
-              }
-              formDataObj[key].push(value);
-            } else {
-              formDataObj[key] = value;
-            }
-          });
-          localStorage.setItem("registrationData", JSON.stringify(formDataObj));
-          
-          const submitButton = form.querySelector('button[type="submit"]');
-          submitButton.disabled = true;
-          submitButton.textContent = "Loading...";
-          sendDataToSheets(new FormData(form))
-            .then(() => {
-              // Remove local saved data on success
-              localStorage.removeItem("registrationData");
-              // Redirect to success page with amount parameter from the registration page
-              const amount = 100;
-              window.location.href = "success.html?amount=" + amount;
-            })
-            .catch(error => {
-              alert("There was an error submitting the form. Please try again.");
-              console.error("Error:", error);
-              submitButton.disabled = false;
-              submitButton.textContent = "Register Now";
-            });
-        }
-      });
-      
-      form.querySelectorAll('input[required], select[required]').forEach(input => {
-        input.addEventListener('blur', function() {
-          if (!input.value.trim()) {
-            showError(input, 'This field is required');
-          } else if (input.type === 'email' && !validateEmail(input.value)) {
-            showError(input, 'Please enter a valid email address');
-          } else if (input.type === 'tel' && !validatePhone(input.value)) {
-            showError(input, 'Please enter a valid phone number');
-          } else {
-            clearError(input);
-          }
-        });
-      });
-      
-      function validateEmail(email) {
-        var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-      }
-      
-      function validatePhone(phone) {
-        var cleaned = phone.replace(/[\s\-()]/g, '');
-        return /^[0-9]{10,15}$/.test(cleaned);
-      }
-      
-      function showError(input, message) {
-        let errorSpan = input.parentNode.querySelector('.error-message');
-        if (!errorSpan) {
-          errorSpan = document.createElement('span');
-          errorSpan.className = 'error-message';
-          errorSpan.style.color = 'red';
-          errorSpan.style.fontSize = '0.9rem';
-          input.parentNode.appendChild(errorSpan);
-        }
-        errorSpan.textContent = message;
-      }
-      
-      function clearError(input) {
-        let errorSpan = input.parentNode.querySelector('.error-message');
-        if (errorSpan) {
-          errorSpan.textContent = '';
-        }
-      }
-      
-      // Google Sheets Integration via Google Apps Script with a timeout fallback
-      function sendDataToSheets(formData) {
-        const data = {};
-        formData.forEach((value, key) => {
-          if (data[key]) {
-            if (!Array.isArray(data[key])) {
-              data[key] = [data[key]];
-            }
-            data[key].push(value);
-          } else {
-            data[key] = value;
-          }
-        });
-        // Set totalAmount to 100 since the workshop has been removed.
-        data.totalAmount = 100;
-        
-        // Replace the URL below with your actual deployed Google Apps Script URL
-        const fetchPromise = fetch("https://script.google.com/macros/s/AKfycbz73Sw0DcNwX_AkYqkTfNSMrXRwfh8VuUyqiIEUvi3C47TSbaNNy8pilmKWjos6-AOh/exec", {
-          method: "POST",
-          mode: "no-cors",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data)
-        });
-        // Timeout fallback after 2 seconds so the registration doesn't get stuck
-        const timeoutPromise = new Promise(resolve => setTimeout(resolve, 2000));
-        return Promise.race([fetchPromise, timeoutPromise]);
-      }
-    });
-  </script>
-  
-  <!-- New Script: Restrict selection to 2 events per slot -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const slotIds = ['slot1', 'slot2', 'slot3', 'commonEvent'];
-      slotIds.forEach(function(slotId) {
-        const fieldset = document.getElementById(slotId);
-        if (fieldset) {
-          const checkboxes = fieldset.querySelectorAll('input[type="checkbox"]');
-          checkboxes.forEach(function(checkbox) {
-            checkbox.addEventListener('change', function() {
-              const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
-              if (checkedCount >= 2) {
-                checkboxes.forEach(function(cb) {
-                  if (!cb.checked) {
-                    cb.disabled = true;
-                  }
-                });
-              } else {
-                checkboxes.forEach(function(cb) {
-                  cb.disabled = false;
-                });
-              }
-            });
-          });
-        }
-      });
-    });
   </script>
 </body>
 </html>
